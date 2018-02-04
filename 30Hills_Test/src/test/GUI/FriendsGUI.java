@@ -3,6 +3,7 @@ package test.GUI;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.io.FileReader;
+import java.net.URL;
 import java.util.LinkedList;
 
 import javax.swing.JFrame;
@@ -19,6 +20,7 @@ import test.utils.JSONUtils;
 import javax.swing.JTextArea;
 import java.awt.Dimension;
 import javax.swing.JComboBox;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -58,6 +60,11 @@ public class FriendsGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public FriendsGUI() {
+		setTitle("Social Network");
+		URL iconURL = getClass().getResource("30Hills_icon.png");
+		ImageIcon icon = new ImageIcon(iconURL);
+		setIconImage(icon.getImage());
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 664, 431);
 		contentPane = new JPanel();
