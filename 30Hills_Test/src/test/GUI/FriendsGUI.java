@@ -24,6 +24,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class FriendsGUI extends JFrame {
 
@@ -39,6 +41,7 @@ public class FriendsGUI extends JFrame {
 	private JButton btnShowFriends;
 
 	private LinkedList<Friend> friends;
+	private JLabel lblSelectPerson;
 
 	/**
 	 * Launch the application.
@@ -90,6 +93,7 @@ public class FriendsGUI extends JFrame {
 			panel.setLayout(null);
 			panel.add(getComboBox());
 			panel.add(getBtnShowFriends());
+			panel.add(getLblSelectPerson());
 		}
 		return panel;
 	}
@@ -97,7 +101,7 @@ public class FriendsGUI extends JFrame {
 	private JComboBox<Friend> getComboBox() {
 		if (comboBox == null) {
 			comboBox = new JComboBox<Friend>();
-			comboBox.setBounds(10, 11, 230, 32);
+			comboBox.setBounds(10, 36, 230, 32);
 
 			try {
 				FileReader reader = new FileReader("assets/data.json");
@@ -242,5 +246,13 @@ public class FriendsGUI extends JFrame {
 			btnShowFriends.setBounds(10, 348, 230, 23);
 		}
 		return btnShowFriends;
+	}
+	private JLabel getLblSelectPerson() {
+		if (lblSelectPerson == null) {
+			lblSelectPerson = new JLabel("Select person:");
+			lblSelectPerson.setHorizontalAlignment(SwingConstants.CENTER);
+			lblSelectPerson.setBounds(10, 11, 230, 14);
+		}
+		return lblSelectPerson;
 	}
 }
