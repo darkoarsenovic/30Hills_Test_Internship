@@ -23,12 +23,12 @@ public class JSONUtils {
 				if (!obj.get("firstName").isJsonNull()) {
 					friend.setFirstName(obj.get("firstName").getAsString().toString());
 				} else {
-					friend.setFirstName("NEPOZNATO");
+					friend.setFirstName("UNKNOWN");
 				}
 				if (!obj.get("surname").isJsonNull()) {
 					friend.setSurname(obj.get("surname").getAsString());
 				} else {
-					friend.setSurname("NEPOZNATO");
+					friend.setSurname("UNKNOWN");
 				}
 				if (!obj.get("age").isJsonNull()) {
 					friend.setAge(obj.get("age").getAsInt());
@@ -36,7 +36,7 @@ public class JSONUtils {
 				if (!obj.get("gender").isJsonNull()) {
 					friend.setGender(obj.get("gender").getAsString());
 				} else {
-					friend.setGender("NEPOZNATO");
+					friend.setGender("UNKNOWN");
 				}
 				if (!obj.get("friends").isJsonNull()) {
 					friend.setFriends(obj.get("friends").getAsJsonArray());
